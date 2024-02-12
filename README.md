@@ -1,3 +1,3 @@
-Countries infos project , getting from API 
-.
+Countries infos project , Get Data With API
+
 The project link online : https://dahreda.github.io/api-countries-infos/
