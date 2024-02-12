@@ -1,0 +1,392 @@
+:root{
+    --logo-color : black;
+    --secondary-color : rgb(56, 56, 56);
+    --bg-color:#FAFAFA;
+    --bg-navbar: white;
+    --text-color: black;
+    --bg-card-color:white;
+    --text-card-infos:gray;
+    --border-color:rgba(128, 128, 128, 0.28);
+    --buttonTop-color:black;
+    --buttonTop-bg:white;
+}
+
+[mode="dark"]{
+    --logo-color : white;
+    --bg-color: hsl(207, 26%, 17%);
+    --bg-navbar: hsl(209, 23%, 22%);
+    --text-color: white;
+    --secondary-color : rgb(198, 196, 196);
+    --bg-card-color:hsl(209, 23%, 22%);
+    --text-card-infos:rgb(187, 187, 187);
+    --border-color:rgba(137, 137, 137, 0.28);
+    --buttonTop-color:black;
+    --buttonTop-bg:white;
+}
+
+[mode="light"]{
+    --logo-color : black;
+    --bg-color:#FAFAFA;
+    --bg-navbar: white;
+    --text-color: black;
+    --bg-card-color:white;
+    --text-card-infos:gray;
+    --secondary-color : rgb(56, 56, 56);
+    --border-color:rgba(128, 128, 128, 0.28);
+    --buttonTop-color:black;
+    --buttonTop-bg:white;
+}
+
+*{
+    text-decoration: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Nunito Sans",sans-serif;
+    /* background-color: var(--bg-color); */
+    position: relative;
+}
+
+.app .buttonTop{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--buttonTop-bg);
+    padding: 15px;
+    border-radius: 50%;
+    z-index: 99;
+    cursor: pointer;
+    box-shadow: 5px 5px 20px 5px var(--border-color);
+}
+
+.app .buttonTop .icon{
+    width: 1.5em;
+    height: 1.5em;
+    color: var(--buttonTop-color);
+}
+
+.app .navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 60px;
+    background-color: var(--bg-navbar);
+    border-bottom: var(--border-color) 1px solid;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.app .navbar .logo{
+    color: var(--text-color);
+}
+.app .navbar .theme{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+    cursor: pointer;
+    color: var(--secondary-color);
+}
+
+.app .navbar .logo a{
+    width :100%;
+    cursor: pointer;
+    color:var(--logo-color);
+}
+
+.app .navbar .logo{
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+.app .container-app{
+    padding: 30px 60px;
+    background-color: var(--bg-color);
+    min-height: 100vh;
+}
+
+.app .container-app .searchBars{
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.app .container-app .searchBars .search{
+    width: 450px;
+    height: 50px;
+}
+.app .container-app .searchBars .search form{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.app .container-app .searchBars .search form input{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    outline: none;
+    padding-left: 40px;
+    background-color: var(--bg-navbar);
+    border: var(--border-color) 1px solid;
+}
+
+.app .container-app .searchBars .search form input::placeholder{
+    color: var(--text-card-infos);
+}
+
+.app .container-app .searchBars .search form .icon-search{
+    position: absolute;
+    left: 15px;
+    top: 35%;
+    color: var(--secondary-color);
+}
+
+.app .searchBars .filter {
+    width: 250px;
+    height: 50px;
+}
+.app .searchBars .filter select {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding: 0 20px;
+    font-size: 15px;
+    outline: none;
+    border: rgba(128, 128, 128, 0.28) solid 1px;
+    background-color: var(--bg-navbar);
+    color: var(--secondary-color);
+}
+
+
+
+
+
+
+
+
+.app .container-app .countries{
+    padding: 40px 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+    width: 100%;
+    justify-content:center;
+}
+
+.container-app .countries .country{
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    height: 340px;
+    border-radius: 25px;
+    overflow: hidden;
+    background-color: var(--bg-card-color);
+    transition: .3s ease-in-out;
+    cursor: pointer;
+    border: var(--border-color) solid 1px;
+}
+
+.container-app .countries .country:hover{
+    transform: scale(1.05);
+}
+.container-app .countries .country img{
+    height: 50%;
+    /* width: 100%; */
+}
+.container-app .countries .country .bottom{
+    height: 50%;
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    padding: 5px 20px;
+}
+
+.container-app .countries .country .bottom .title{
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+.container-app .countries .country .bottom .infos{
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: var(--text-color);
+}
+.container-app .countries .country .bottom .infos span{
+    font-weight: normal;
+    color: var(--text-card-infos);
+}
+
+
+
+
+
+/* country infos page */
+.btn-back{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    padding: 10px 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 20px;
+    background-color: var(--buttonTop-bg);
+    outline: none;
+    cursor: pointer;
+    border: 1px solid var(--border-color);
+    margin-bottom: 20px;
+    color: var(--buttonTop-color);
+}
+
+.btn-back .icon{
+    font-size: 30px;
+    color: var(--buttonTop-color);
+}
+
+
+.country-infos{
+    display: flex;
+    flex-direction: row;
+    margin: 20px auto;
+    width: fit-content;
+    flex-wrap: wrap;
+    /* gap: 50px; */
+}
+
+
+.country-infos .leftSide{
+    /* flex-grow: 1; */
+    max-width:fit-content;
+}
+.country-infos .rightSide{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 10px;
+    padding-left: 20px;
+    flex-grow: 1;
+}
+.country-infos .rightSide .top{
+    display: flex;
+    flex-direction: column;
+    /* gap: 15px; */
+}
+.country-infos .rightSide .top .infos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 30px 0;
+
+    gap: 20px;
+
+}
+.country-infos .rightSide .top .infos .column{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-grow: 1;
+}
+
+.country-infos .rightSide .top .country-name{
+    font-weight: bold;
+    font-size: 1.8em;
+    color: var(--text-color);
+}
+.country-infos .rightSide .top .infos .column .title{
+    font-weight: normal;
+    color: var(--text-color);
+}
+.country-infos .rightSide .top .infos .column span{
+    font-weight: normal;
+    color: var(--text-card-infos);
+}
+.country-infos .rightSide .bottom .title{
+    font-weight: normal;
+    color: var(--text-color);
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.country-infos .rightSide .bottom span{
+    font-weight: normal;
+    color: var(--text-card-infos);
+}
+.country-infos .rightSide .bottom .buttons{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.country-infos .rightSide .bottom .buttons button{
+    padding: 5px 10px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    background-color: var(--bg-card-color);
+    color: var(--text-color);
+    outline: none;
+    cursor: pointer;
+    border: 1px solid var(--border-color);
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width:710px) {
+    .container-app .countries{
+        justify-content: center !important;
+    }
+    .container-app .countries .country{
+        height: max-content;
+    }
+    .container-app .countries .country .bottom{
+        gap: 20px;
+       padding-top: 10px;
+       padding-bottom: 10px;
+    }
+    .country-infos .leftSide{
+        display: block;
+        width: 100%;
+    }
+    .countries-infos{
+        flex-direction: column;
+    }
+    .country-infos .rightSide .top .infos{
+        flex-wrap: wrap;
+    }
+    .country-infos .rightSide{
+        flex-direction: column;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .country-infos .rightSide .bottom .title{
+        align-items: flex-start;
+    }
+
+}
