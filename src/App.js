@@ -12,7 +12,7 @@ const App = () => {
   };
   return (
     <div className="app" mode={theme}>
-      <HashRouter basename="api-countries-infos">
+      <HashRouter>
         <Header switchColor={themeColor} currentColor={theme} />
         <Routes>
           <Route path="/" element={<Home />} />
