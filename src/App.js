@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Header from "./components/Header";
 import "./App.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, HashRouter, Route, Routes } from "react-router-dom";
 import Country from "./components/Country";
 import Home from "./components/Home";
 
@@ -12,7 +12,7 @@ const App = () => {
   };
   return (
     <div className="app" mode={theme}>
-      <BrowserRouter basename="api-countries-infos">
+      <HashRouter basename="api-countries-infos">
         <Header switchColor={themeColor} currentColor={theme} />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -21,7 +21,7 @@ const App = () => {
             <Route path=":name" element={<Country />} />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 };
